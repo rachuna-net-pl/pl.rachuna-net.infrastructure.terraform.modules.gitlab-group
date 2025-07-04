@@ -1,6 +1,7 @@
 [
     "",
     "ansible",
+    "apps",
     "containers",
     "dev-tools",
     "gitlab",
