@@ -5,8 +5,8 @@ resource "gitlab_group" "group" {
   parent_id        = var.parent_group != "" ? data.gitlab_group.parent[0].id : null
   visibility_level = var.visibility
   default_branch   = var.default_branch
-  avatar           = var.icon_type != "" ? "${path.module}/images/${var.icon_type}.png" : null
-  avatar_hash      = var.icon_type != "" ? filesha256("${path.module}/images/${var.icon_type}.png") : null
+  avatar           = local.avatar == null ? null : "${local.avatar}"
+  avatar_hash      = local.avatar == null ? null : filesha256("${local.avatar}")
 }
 
 resource "gitlab_group_label" "label" {
