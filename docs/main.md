@@ -1,73 +1,48 @@
-## Wymagania
+## Requirements
 
-- Dostęp do instancji GitLab z odpowiednimi uprawnieniami.
-- Provider: [gitlabhq/gitlab](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs)
+| Name | Version |
+|------|---------|
+| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | ~> 18.0 |
 
-## Przykład użycia
+## Providers
 
-```hcl
-module "group_pl_rachuna-net" {
-  source         = "git@gitlab.com:pl.rachuna-net/infrastructure/terraform/modules/gitlab-group.git?ref=v1.0.0"
-  name           = "pl.rachuna-net"
-  description    = "https://rachuna-net.pl"
-  parent_group   = "" # Brak grupy nadrzędnej
-  visibility     = "public"
-  default_branch = "main"
-  labels = {
-    "bug" = {
-      description = "Błąd"
-      color       = "#FF0000"
-    }
-  }
-  icon_type = "root"
-  badges = {
-    "release" = {
-      link_url  = "https://gitlab.com/%%{project_path}/-/releases"
-      image_url = "https://gitlab.com/%%{project_path}/-/badges/release.svg"
-    }
-  }
-  variables = {
-    "MY_VAR" = {
-      value       = "secret"
-      description = "Opis zmiennej"
-      protected   = true
-      masked      = true
-    }
-  }
-}
-```
+| Name | Version |
+|------|---------|
+| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | ~> 18.0 |
 
-## Argumenty wejściowe
+## Modules
 
-| Nazwa           | Typ     | Wymagany | Domyślny    | Opis                                      |
-|-----------------|---------|----------|-------------|--------------------------------------------|
-| parent_group    | string  | tak      | -           | Ścieżka nadrzędnej grupy (lub pusty dla root) |
-| name            | string  | tak      | -           | Nazwa grupy                               |
-| description     | string  | tak      | -           | Opis grupy                                |
-| visibility      | string  | nie      | "private"   | Widoczność grupy: `private`, `internal`, `public` |
-| default_branch  | string  | nie      | "main"      | Domyślna gałąź                            |
-| icon_type       | string  | nie      | ""          | Typ ikony (np. `root`, `gitlab`, `packer`, itd.) |
-| labels          | map     | nie      | {}          | Mapowanie etykiet grupowych               |
-| badges          | map     | nie      | {}          | Mapowanie badge'y grupowych               |
-| variables       | map     | nie      | {}          | Mapowanie zmiennych grupowych             |
+No modules.
 
-## Argumenty wyjściowe
+## Resources
 
-| Nazwa      | Opis                                  |
-|------------|---------------------------------------|
-| full_path  | Pełna ścieżka utworzonej grupy        |
-| id         | ID utworzonej grupy w GitLab          |
+| Name | Type |
+|------|------|
+| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group) | resource |
+| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group_badge) | resource |
+| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group_label) | resource |
+| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group_variable) | resource |
+| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/data-sources/group) | data source |
 
-## Dostępne typy ikon
+## Inputs
 
-- ansible
-- containers
-- dev-tools
-- gitlab
-- infrastructure
-- mikrotik
-- packer
-- proxmox
-- root
-- semantic-release
-- terraform
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_allowed_avatar_types_json"></a> [allowed\_avatar\_types\_json](#input\_allowed\_avatar\_types\_json) | Path to allowed avatar types json | `string` | `""` | no |
+| <a name="input_avatar"></a> [avatar](#input\_avatar) | Type of the icon for the group (default: from type) | `string` | `""` | no |
+| <a name="input_avatars_dir"></a> [avatars\_dir](#input\_avatars\_dir) | Avatars directory png files | `string` | `""` | no |
+| <a name="input_badges"></a> [badges](#input\_badges) | n/a | <pre>map(object({<br/>    link_url  = string<br/>    image_url = string<br/>  }))</pre> | `{}` | no |
+| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | The group's default branch | `string` | `"main"` | no |
+| <a name="input_description"></a> [description](#input\_description) | Description of the gitlab group | `string` | n/a | yes |
+| <a name="input_labels"></a> [labels](#input\_labels) | n/a | <pre>map(object({<br/>    description = string<br/>    color       = string<br/>  }))</pre> | `{}` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the gitlab group | `string` | n/a | yes |
+| <a name="input_parent_group"></a> [parent\_group](#input\_parent\_group) | Gitlab parent group | `string` | n/a | yes |
+| <a name="input_variables"></a> [variables](#input\_variables) | n/a | <pre>map(object({<br/>    value             = string<br/>    description       = optional(string)<br/>    protected         = optional(bool)<br/>    masked            = optional(bool)<br/>    environment_scope = optional(string)<br/>  }))</pre> | `{}` | no |
+| <a name="input_visibility"></a> [visibility](#input\_visibility) | The group's visibility | `string` | `"private"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_full_path"></a> [full\_path](#output\_full\_path) | n/a |
+| <a name="output_id"></a> [id](#output\_id) | n/a |

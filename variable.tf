@@ -1,15 +1,17 @@
-variable "parent_group" {
-  type = string
-}
-
 variable "name" {
-  type = string
+  type        = string
+  description = "Name of the gitlab group"
 }
 
 variable "description" {
-  type = string
+  type        = string
+  description = "Description of the gitlab group"
 }
 
+variable "parent_group" {
+  type        = string
+  description = "Gitlab parent group"
+}
 
 variable "visibility" {
   type        = string
@@ -32,13 +34,20 @@ variable "default_branch" {
   description = "The group's default branch"
 }
 
-variable "icon_type" {
+variable "allowed_avatar_types_json" {
+  type        = string
+  default     = ""
+  description = "Path to allowed avatar types json"
+}
+
+
+variable "avatar" {
   type        = string
   description = "Type of the icon for the group (default: from type)"
   default     = ""
 
   validation {
-    condition     = contains(local.allowed_icon_types, var.icon_type)
+    condition     = contains(local.allowed_avatar_types, var.avatar)
     error_message = "Unsupported group type"
   }
 }
@@ -68,4 +77,10 @@ variable "variables" {
     environment_scope = optional(string)
   }))
   default = {}
+}
+
+variable "avatars_dir" {
+  description = "Avatars directory png files"
+  type        = string
+  default     = ""
 }
