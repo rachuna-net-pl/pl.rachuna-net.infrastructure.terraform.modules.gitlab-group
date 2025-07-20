@@ -1,2 +1,0 @@
-[![](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/-/badges/release.svg)](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/-/releases)
-[![](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/badges/main/pipeline.svg)](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/-/commits/main)
