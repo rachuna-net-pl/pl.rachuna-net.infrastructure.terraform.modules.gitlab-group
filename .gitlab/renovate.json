@@ -1,3 +1,49 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "baseBranches": [
+    "alpha"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "assignees": [
+    "@mrachuna"
+  ],
+  "reviewers": [
+    "@mrachuna"
+  ],
+  "semanticCommitScope": "debs",
+  "semanticCommitType": "chore",
+  "gitAuthor": "Development Bot <gitlab@rachuna-net.pl>",
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "semanticCommitType": "feat",
+      "semanticCommitScope": "debs"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "semanticCommitType": "fix",
+      "semanticCommitScope": "debs"
+    },
+    {
+      "matchManagers": [
+        "terraform"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "terraform-docs markdown . > README.md"
+        ],
+        "fileFilters": [
+          "*.tf",
+          "README.md"
+        ]
+      }
+    }
+  ]
 }
