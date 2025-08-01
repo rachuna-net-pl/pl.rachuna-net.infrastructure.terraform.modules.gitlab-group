@@ -1,23 +1,16 @@
-# <img src=".gitlab/avatar.png" alt="vagrant" height="20"/> Vagrant gitlab-group
-
-[![](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/-/badges/release.svg)](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/-/releases)
-[![](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/badges/main/pipeline.svg)](https://gitlab.com/pl.rachuna-net/infrastructure/terraform/modules/gitlab-group/-/commits/main)
-
-Moduł Terraform do automatycznego zakładania grup w GitLab wraz z etykietami, badge'ami oraz zmiennymi grupowymi.
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.12.0 |
-| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | 18.1.0 |
+| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | 18.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | 18.1.0 |
+| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | 18.2.0 |
 
 ## Modules
 
@@ -27,11 +20,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group) | resource |
-| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group_badge) | resource |
-| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group_label) | resource |
-| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group_variable) | resource |
-| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/data-sources/group) | data source |
+| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/18.2.0/docs/resources/group) | resource |
+| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/18.2.0/docs/resources/group_badge) | resource |
+| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/18.2.0/docs/resources/group_label) | resource |
+| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/18.2.0/docs/resources/group_variable) | resource |
+| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/18.2.0/docs/data-sources/group) | data source |
 
 ## Inputs
 
@@ -56,18 +49,3 @@ No modules.
 | <a name="output_full_path"></a> [full\_path](#output\_full\_path) | n/a |
 | <a name="output_id"></a> [id](#output\_id) | n/a |
 <!-- END_TF_DOCS -->
-
----
-## Contributions
-Jeśli masz pomysły na ulepszenia, zgłoś problemy, rozwidl repozytorium lub utwórz Merge Request. Wszystkie wkłady są mile widziane!
-[Contributions](CONTRIBUTING.md)
-
----
-## License
-Projekt licencjonowany jest na warunkach [Licencji MIT](LICENSE).
-
----
-# Author Information
-### &emsp; Maciej Rachuna
-# <img src="https://gitlab.com/pl.rachuna-net/gitlab-profile/-/raw/main/assets/logo/website_logo_transparent_background.png" alt="rachuna-net.pl" height="100"/>
-
