@@ -11,13 +11,13 @@ Moduł Terraform do automatycznego zakładania grup w GitLab wraz z etykietami, 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.12.0 |
-| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | ~> 18.0 |
+| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | 18.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | ~> 18.0 |
+| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | 18.1.0 |
 
 ## Modules
 
@@ -27,11 +27,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group) | resource |
-| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group_badge) | resource |
-| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group_label) | resource |
-| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group_variable) | resource |
-| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/data-sources/group) | data source |
+| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group) | resource |
+| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group_badge) | resource |
+| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group_label) | resource |
+| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/resources/group_variable) | resource |
+| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/18.1.0/docs/data-sources/group) | data source |
 
 ## Inputs
 
